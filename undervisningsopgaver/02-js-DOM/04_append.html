@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+    <main>
+        <h2>Undertitel</h2>
+
+        <section class="articles">
+            <article class="toparticle">
+                <img src="billeder/image2.png" alt="billede2">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ratione similique doloremque voluptatem sit culpa, fuga, ducimus, hic, nemo atque architecto. Numquam dolore libero ab itaque dolores voluptatem voluptas excepturi.</p>
+            </article>
+
+            <article class="bottomarticle">
+                <img src="billeder/image4.png" alt="billede4">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ratione similique doloremque voluptatem sit culpa, fuga, ducimus, hic, nemo atque architecto. Numquam dolore libero ab itaque dolores voluptatem voluptas excepturi.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+
+    <script>
+        //jeg tilføjer to variabler, da jeg vil tilføje en article, men min article skal ligge inde i en section, så derfor tilføjer jeg også en section variabel
+        let mainSection = document.querySelector("section");
+        let newArticle = document.createElement("article");
+        // tilføjer en overskrift til min nye article, som er en h3 ligesom de andre overskrifter i mine andre articles.
+        let overskrift = document.createElement("h3");
+        //Laver en tekststreng (textnode).
+        let overskriftText = document.createTextNode("Article 3");
+        let billede = document.createElement("img");
+        billede.src = "billeder/purple.png";
+        let tekst = document.createElement("p");
+        let tekstIndhold = document.createTextNode("Dette er et billede, og jeg har tilføjet noget tekst til billedet, wuhu");
+
+
+        //Tilføjer min overskrifttext, ved først at have lavet en overskrift som er defineret, og herefter sætte overskriftteksten ind.
+        overskrift.appendChild(overskriftText);
+        //tilføjer et billede til artiklen
+        newArticle.appendChild(billede);
+        //tilføjer overskriften til article.
+        newArticle.appendChild(overskrift);
+        //tilføjer tekstindholdet p
+        tekst.appendChild(tekstIndhold);
+        newArticle.appendChild(tekst);
+
+
+        //tilføjer et ekstra barn til en section, hvorefter jeg tilføjer en ny article.
+        mainSection.appendChild(newArticle)
+
+    </script>
+</body>
+
+</html>
