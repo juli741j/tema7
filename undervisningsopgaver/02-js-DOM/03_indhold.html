@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+    <main>
+        <h2>Undertitel</h2>
+
+        <section class="articles">
+            <article class="toparticle">
+                <img src="billeder/image2.png" alt="billede2">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ratione similique doloremque voluptatem sit culpa, fuga, ducimus, hic, nemo atque architecto. Numquam dolore libero ab itaque dolores voluptatem voluptas excepturi.</p>
+            </article>
+
+            <article class="bottomarticle">
+                <img src="billeder/image4.png" alt="billede4">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ratione similique doloremque voluptatem sit culpa, fuga, ducimus, hic, nemo atque architecto. Numquam dolore libero ab itaque dolores voluptatem voluptas excepturi.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+
+    <script>
+        const pic1 = document.querySelector(".toparticle img");
+        console.log(pic1);
+        pic1.src = "billeder/green.png";
+        pic1.alt = "Det grønne billede";
+        console.log(pic1);
+
+        const pic2 = document.querySelector(".bottomarticle img");
+        console.log(pic2);
+        pic2.src = "billeder/orange.png";
+        pic2.alt = "Det orange billede";
+        console.log(pic2);
+
+    </script>
+</body>
+
+</html>
