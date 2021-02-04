@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <section id="liste"></section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        let dyr = [{
+            "navn": "gris",
+            "type": "pattedyr",
+            "levested": "svinesti",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+        }, {
+            "navn": "frø",
+            "type": "amfibie",
+            "levested": "sø",
+            "billede": "http://mabe-kea.dk/E19/pics/frog.png"
+        }, {
+            "navn": "ræv",
+            "type": "pattedyr",
+            "levested": "skov",
+            "billede": "http://mabe-kea.dk/E19/pics/fox.png"
+        }, {
+            "navn": "sild",
+            "type": "fisk",
+            "levested": "vand",
+            "billede": "http://mabe-kea.dk/E19/pics/fox.png"
+        }, {
+            "navn": "krokodille",
+            "type": "krybdyr",
+            "levested": "vand",
+            "billede": "http://mabe-kea.dk/E19/pics/fox.png"
+        }];
+
+        function start() {
+            console.log(dyr);
+        }
+
+        //        function start() {
+        //            console.log(start);
+        //            const listevisning = document.querySelector("#liste");
+        //            dyr.forEach(dyr => {
+        //                listevisning.innerHTML += `<p>${dyr.navn} ${dyr.type} ${dyr.levested} ${dyr.billede}</p>`
+        //            })
+        //        }
+
+
+        //        const article = document.querySelector("#dyr");
+        // const dyr = {
+        // "navn": "gris",
+        // "type": "pattedyr",
+        // "levested": "svinefarme",
+        // "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+        // };
+        // const info = `Navn:${dyr.navn}, Type:${dyr.type}, Levested:${dyr.levested}`;
+        // const billedeGris = `${dyr.billede}`;
+        //
+        // article.querySelector("p").textContent = info;
+        // article.querySelector("img").src = dyr.billede;
+        //
+        // console.log(`navn:${dyr.navn}, type:${dyr.type}, billede:${dyr.billede}, levested:${dyr.levested}`);
+
+    </script>
+</body>
+
+</html>
