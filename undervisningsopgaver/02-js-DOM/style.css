@@ -50,7 +50,7 @@ footer p {
 
 
 @media (max-width: 600px) {
-    .articles {
+    article {
         display: grid;
         grid-template-columns: 1fr;
     }
