@@ -4,19 +4,121 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babushka website</title>
-    <link rel="stylesheet" href="babushka.css">
-
+    <title></title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: antiquewhite;
+        }
+
+        img {
+            width: 100%;
+
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 1em;
+            margin: 2em;
+        }
+
+        .person {
+            padding: 1em;
+            border: 1px solid;
+            border-radius: 1em;
+        }
+
+        nav {
+            position: fixed;
+            left: 0vw;
+            right: 0vw;
+
+            background-color: brown;
+            padding: 1em;
+            text-align: right;
+            background-size: cover;
+            top: 0vw;
+
+        }
+
+        nav h1 {
+            position: fixed;
+            margin-top: -8px;
+            color: orange;
+            padding-left: 1vw;
+            font-family: 'Playfair Display', serif;
+
+        }
+
+        header h1 {
+            padding-top: 7vw;
+            font-size: 3vw;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: #c1871d;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: orange;
+        }
+
+        p {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        button {
+            font-size: 15px;
+            font-family: 'Playfair Display', serif;
+            background: none;
+            border: none;
+            border-right: 1px solid;
+            color: wheat;
+        }
+
+        button:hover {
+            color: orange;
+        }
+
+        .valgt {
+            color: orange;
+        }
+
+    </style>
+
 </head>
 
 <body>
-    <h1></h1>
-    <main></main>
+    <nav>
+        <h1>Bistro Babushka</h1>
+        <button data-kategori="alle" class="valgt">Alle</button>
+        <button data-kategori="forretter">Forretter</button>
+        <button data-kategori="hovedretter">Hovedretter</button>
+        <button data-kategori="desserter">Desserter</button>
+        <button data-kategori="drikkevarer">Drikkevarer</button>
+    </nav>
+    <header>
+        <h1>Alle</h1>
+    </header>
+
+
+
+    <section id="liste"></section>
+
     <template>
-        <article>
+        <article class="ret">
             <img src="" alt="" class="billede">
             <h2 class="navn"></h2>
             <p class="kortbeskrivelse"></p>
@@ -25,7 +127,70 @@
     </template>
 
 
+    <script>
+        const header = document.querySelector("header h1");
+        const medieurl = "https://babushka-dd8a.restdb.io/media/";
+        const myHeaders = {
+
+            "x-apikey": "600ec2fb1346a1524ff12de4"
+        }
+        document.addEventListener("DOMContentLoaded", start)
+        let retter;
+        let filter = "alle";
+
+        // første funktion der kaldes efter DOM er loaded
+        function start() {
+            const filterKnapper = document.querySelectorAll("nav button");
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerretter));
+            loadJSON();
+        }
+
+        function filtrerretter() {
+            filter = this.dataset.kategori;
+            document.querySelector(".valgt").classList.remove("valgt");
+            this.classList.add("valgt");
+            visRetter();
+            header.textContent = this.textContent;
+        }
+
+        async function loadJSON() {
+            const JSONData = await fetch("https://babushka-dd8a.restdb.io/rest/menu", {
+                headers: myHeaders
+            });
+            retter = await JSONData.json();
+            visRetter();
+        }
+
+        //funktion der viser personer i liste view
+        function visRetter() {
+
+            const dest = document.querySelector("#liste"); // container til articles med en person
+            const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
+            dest.textContent = " ";
+            retter.forEach(ret => {
+                if (filter == ret.kategori || filter == "alle") {
+                    // loop igennem json (personer)
+                    const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".billede").src = medieurl + ret.billede;
+                    klon.querySelector(".navn").textContent = ret.navn;
+                    klon.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
+                    klon.querySelector(".pris").textContent = `Pris: ${ret.pris},-`;
+                    //NYT
+                    klon.querySelector(".ret").addEventListener("click", () => visDetaljer(ret));
+
+                    dest.appendChild(klon);
+
+                }
 
 
-    <script src="babushka.js"></script>
-</body></html>
+            })
+        }
+        //NYT
+        function visDetaljer(hvem) {
+            location.href = `babushka_single.html?id=${hvem._id}`;
+        }
+
+    </script>
+</body>
+
+</html>
