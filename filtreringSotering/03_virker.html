@@ -41,7 +41,7 @@
 
 <body>
 
-
+    <h1>Alle</h1>
     <nav>
         <button data-troende="alle" class="valgt">Alle</button>
         <button data-troende="ja">Troende</button>
@@ -82,6 +82,7 @@
         function filtrerpersoner() {
             filter = this.dataset.troende;
             visPersoner();
+            header.textContent = this.textContent;
         }
 
         async function loadJSON() {
