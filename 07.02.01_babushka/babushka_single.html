@@ -6,19 +6,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="">
+
+
+    <link rel="shortcut icon" type="svg" href="lillelogo.svg">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: antiquewhite;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    article {
+        margin-left: 5vw;
+        margin-right: 0vw;
+        margin-top: 12vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h2 {
+        font-family: 'Playfair Display', serif;
+        color: orange;
+        background-color: brown;
+        padding: 0.5em;
+        position: fixed;
+        background-size: cover;
+        left: 0;
+        right: 0;
+        top: -21px;
+    }
+
+    .langbeskrivelse {
+        margin-right: 5vw;
+        margin-left: 2vw;
+        font-size: 23px;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .pris {
+        font-weight: 200;
+        font-size: 20px;
+        text-align: right;
+        margin-right: 5vw;
+        margin-top: -2vw;
+        color: brown;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .navn {
+        padding-left: 114px;
+    }
+
+
+
+    button {
+        font-size: 15px;
+        font-family: 'Playfair Display', serif;
+        background-color: brown;
+        border-radius: 4px;
+        cursor: pointer;
+        color: wheat;
+        border: none;
+        padding: 0;
+        width: 116px;
+        height: 27px;
+        margin-top: 2vw;
+    }
+
+    #footer {
+        width: 100%;
+        height: 4vw;
+        position: absolute;
+        background-color: brown;
+        bottom: -5vw;
+
+    }
+
+    #footer a {
+        text-align: center;
+        color: wheat;
+        font-size: 1.8vw;
+        line-height: 3.5vw;
+        font-weight: 500;
+        text-decoration: none;
+        font-family: 'Playfair Display', serif;
+        padding-left: 10vw;
+        padding-right: 0vw;
+        margin: 6vw;
+    }
+
+    .lillelogo {
+        width: 46px;
+        position: fixed;
+        top: 2px;
+        z-index: 1;
+        left: 50px;
+    }
+
+    /*//mobilversion*/
+    @media (max-width: 600px) {
+
+        img {
+            width: 100%;
+        }
+
+        article {
+
+            display: contents;
+
+        }
+
+        .billede {
+            margin-top: 9vw;
+        }
+
+
+        .navn {
+            padding-left: 67px;
+        }
+
+
+        .lillelogo {
+            left: 16px;
+        }
+
+        .langbeskrivelse {
+            font-size: 17px;
+        }
+
+        #footer {
+            height: 6vw;
+        }
+
+        #footer a {
+            font-size: 2.8vw;
+            padding-left: 6vw;
+        }
+
+    }
+
+</style>
 
 
 <body>
-    <button>tilbage</button>
+
+    <img class="lillelogo" src="lillelogo.svg" alt="lillelogo">
     <article class="ret">
-        <img src="" alt="" class="billede">
         <h2 class="navn"></h2>
-        <p class="kortbeskrivelse"></p>
+        <img src="" alt="" class="billede">
         <p class="langbeskrivelse"></p>
+        <button>Gå tilbage</button>
+
         <p class="pris"></p>
+
+
     </article>
+
+    <footer id="footer">
+        <a href="#kontakt">Kontakt</a>
+        <a href="#menu">Menu</a>
+        <a href="#bestil">Bestil bord</a>
+
+
+    </footer>
+
+
 
 
     <script>
@@ -44,10 +210,10 @@
         }
 
         function visRetter() {
-            document.querySelector(".billede").src = medieurl + ret.billede;
-
 
             document.querySelector(".navn").textContent = ret.navn;
+
+            document.querySelector(".billede").src = medieurl + ret.billede;
             document.querySelector(".langbeskrivelse").textContent = ret.langbeskrivelse;
             document.querySelector(".pris").textContent = `Pris: ${ret.pris},-`;
 
@@ -60,6 +226,8 @@
         }
 
     </script>
+
+
 </body>
 
 </html>

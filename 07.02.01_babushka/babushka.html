@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 
+    <link rel="shortcut icon" type="svg" href="lillelogo.svg">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
@@ -13,96 +15,190 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: antiquewhite;
-        }
+</head>
 
-        img {
-            width: 100%;
+<style>
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: antiquewhite;
+    }
 
-        }
+    img {
+        width: 100%;
 
-        #liste {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 1em;
-            margin: 2em;
-        }
+    }
 
-        .person {
-            padding: 1em;
-            border: 1px solid;
-            border-radius: 1em;
-        }
+    #liste {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 1em;
+        margin: 2em;
+    }
+
+    .person {
+        padding: 1em;
+        border: 1px solid;
+        border-radius: 1em;
+    }
+
+    nav {
+        position: fixed;
+        left: 0vw;
+        right: 0vw;
+
+        background-color: brown;
+        padding: 1em;
+        text-align: right;
+        background-size: cover;
+        top: 0vw;
+
+    }
+
+    nav h1 {
+        position: fixed;
+        margin-top: -8px;
+        color: orange;
+        padding-left: 1vw;
+        font-family: 'Playfair Display', serif;
+
+    }
+
+    header h1 {
+        padding-top: 7vw;
+        font-size: 3vw;
+        font-weight: 500;
+        font-family: 'Playfair Display', serif;
+        text-align: center;
+        color: #c1871d;
+    }
+
+    h2 {
+        font-family: 'Playfair Display', serif;
+        color: orange;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    button {
+        font-size: 15px;
+        font-family: 'Playfair Display', serif;
+        background: none;
+        border: none;
+        border-right: 1px solid;
+        color: wheat;
+        cursor: pointer;
+    }
+
+    .info {
+        font-size: 15px;
+        font-family: 'Playfair Display', serif;
+        background-color: brown;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        color: orange;
+    }
+
+    .valgt {
+        color: orange;
+    }
+
+    #footer {
+        width: 100%;
+        height: 6vw;
+        position: absolute;
+        background-color: brown;
+
+    }
+
+    #footer a {
+        text-align: center;
+        color: wheat;
+        font-size: 1.8vw;
+        line-height: 3.5vw;
+        font-weight: 500;
+        text-decoration: none;
+        font-family: 'Playfair Display', serif;
+        padding-left: 10vw;
+        padding-right: 0vw;
+        margin: 6vw;
+    }
+
+    .logo {
+        width: 94px;
+        position: absolute;
+        left: 27px;
+        top: 0vw;
+    }
+
+    /*//mobilversion*/
+    @media (max-width: 600px) {
 
         nav {
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            right: 74vw;
             position: fixed;
-            left: 0vw;
-            right: 0vw;
-
-            background-color: brown;
-            padding: 1em;
-            text-align: right;
-            background-size: cover;
-            top: 0vw;
-
-        }
-
-        nav h1 {
-            position: fixed;
-            margin-top: -8px;
-            color: orange;
-            padding-left: 1vw;
-            font-family: 'Playfair Display', serif;
-
-        }
-
-        header h1 {
-            padding-top: 7vw;
-            font-size: 3vw;
-            font-weight: 500;
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            color: #c1871d;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: orange;
-        }
-
-        p {
-            font-family: 'Roboto', sans-serif;
+            height: 100%;
         }
 
         button {
-            font-size: 15px;
-            font-family: 'Playfair Display', serif;
-            background: none;
+            padding: 2vw;
+            margin-top: 15vw;
+            font-size: 2.5vw;
             border: none;
-            border-right: 1px solid;
-            color: wheat;
+            border-bottom: 1px solid;
         }
 
-        button:hover {
-            color: orange;
+        img {
+            width: 61vw;
         }
 
-        .valgt {
-            color: orange;
+        article {
+            text-align: right;
         }
 
-    </style>
+        .info {
+            padding-top: 1vw;
+            margin-top: -1px;
+        }
 
-</head>
+        header h1 {
+            margin-right: 16vw;
+            font-size: 5vw;
+            padding-top: 0;
+        }
+
+        h2 {
+            font-size: 5vw;
+            margin-left: 18vw;
+        }
+
+        p {
+            font-size: 3vw;
+            margin-left: 18vw;
+        }
+
+        .logo {
+            width: 18vw;
+            left: 4vw;
+        }
+
+    }
+
+</style>
+
+
 
 <body>
     <nav>
-        <h1>Bistro Babushka</h1>
+        <img class="logo" src="logo.svg" alt="logo">
         <button data-kategori="alle" class="valgt">Alle</button>
         <button data-kategori="forretter">Forretter</button>
         <button data-kategori="hovedretter">Hovedretter</button>
@@ -123,9 +219,17 @@
             <h2 class="navn"></h2>
             <p class="kortbeskrivelse"></p>
             <p class="pris"></p>
+            <button class="info">Info</button>
         </article>
     </template>
 
+    <footer id="footer">
+        <a href="#kontakt">Kontakt</a>
+        <a href="#menu">Menu</a>
+        <a href="#bestil">Bestil bord</a>
+
+
+    </footer>
 
     <script>
         const header = document.querySelector("header h1");
@@ -176,7 +280,7 @@
                     klon.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
                     klon.querySelector(".pris").textContent = `Pris: ${ret.pris},-`;
                     //NYT
-                    klon.querySelector(".ret").addEventListener("click", () => visDetaljer(ret));
+                    klon.querySelector(".info").addEventListener("click", () => visDetaljer(ret));
 
                     dest.appendChild(klon);
 
